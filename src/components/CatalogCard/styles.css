@@ -1,0 +1,26 @@
+
+.dsc-catalog-carg-top {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.dsc-catalog-carg-top img {
+  width: 150px;
+  height: 150px;
+}
+
+.dsc-catalog-carg-bottom {
+  padding: 10px 20px;
+  min-height: 110px;
+}
+
+.dsc-catalog-carg-bottom h3 {
+  color: var(--dsc-color-font-secondary);
+  font-size: 20px;
+}
+
+.dsc-catalog-carg-bottom h4 {
+  color: var(--dsc-color-font-primary);
+  font-size: 12px;
+}
