@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./styles.css";
 import * as cartService from "../../../services/cart-service";
-import { OrderDTO, OrderItemDTO } from "../../../models/order";
+import { OrderDTO } from "../../../models/order";
+import { OrderItemDTO } from "../../../models/order";
 
 const item1: OrderItemDTO = new OrderItemDTO(
   4,
@@ -20,14 +21,19 @@ const item2: OrderItemDTO = new OrderItemDTO(
 );
 
 export default function Cart() {
-  const cart: OrderDTO = new OrderDTO();
 
-  useEffect(() => {
+const [cart, setCart] = useState<OrderDTO>(() => {
+  const cart = cartService.getCart();
+
+  if (cart.items.length === 0) {
     cart.items.push(item1);
     cart.items.push(item2);
-
     cartService.saveCart(cart);
-  }, []);
+  }
+
+  return Object.assign(new OrderDTO(), cart);
+});
+
 
   return (
     <main>
