@@ -6,6 +6,7 @@ import deleteIcon from "../../../assets/delete.svg";
 import { useEffect, useState } from "react";
 import type { ProductDTO } from "../../../models/product";
 import SearchBar from "../../../components/SearchBar";
+import DialogInfo from "../../../components/DialogInfo";
 
 type QueryParams = {
   page: number;
@@ -83,6 +84,7 @@ export default function ProductListing() {
           </div>
           }
       </section>
+      <DialogInfo />
     </main>
   );
 }
