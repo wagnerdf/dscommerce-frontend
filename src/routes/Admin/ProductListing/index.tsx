@@ -1,5 +1,6 @@
 import "./styles.css";
 import * as productService from "../../../services/product-service";
+import ButtonNextPage from "../../../components/ButtonNextPage";
 import editIcon from "../../../assets/edit.svg";
 import deleteIcon from "../../../assets/delete.svg";
 import { useEffect, useState } from "react";
@@ -34,6 +35,10 @@ export default function ProductListing() {
   function handleSearch(searchText: string){
     setProducts([]);
     setQueryParams({ ...queryParams, page: 0, name: searchText});
+  }
+
+  function handleNextPageClick(){
+    setQueryParams({ ...queryParams, page: queryParams.page + 1})
   }
 
   return (
@@ -71,8 +76,12 @@ export default function ProductListing() {
             ))}
           </tbody>
         </table>
-
-        <div className="dsc-btn-next-page">Carregar mais</div>
+        {
+          !isLastPage &&
+          <div onClick={handleNextPageClick}>
+            <ButtonNextPage />
+          </div>
+          }
       </section>
     </main>
   );
