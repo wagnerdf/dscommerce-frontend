@@ -99,7 +99,7 @@ nav h1 {
 
 nav a {
   font-size: 14px;
-  
+
 }
 
 .dsc-navbar-right {
@@ -156,6 +156,7 @@ nav a {
   nav h1 {
     font-size: 24px;
   }
+
   .dsc-menu-item p {
     display: unset;
   }
@@ -243,14 +244,19 @@ nav a {
   color: var(--dsc-color-font-placeholder);
 }
 
-.dsc-input-error {
+.dsc-form-control[data-invalid="true"] {
   border: 1px solid var(--dsc-color-error);
+}
+
+.dsc-form-control[data-invalid="true"]~div {
+  display: unset;
 }
 
 .dsc-form-error {
   color: var(--dsc-color-error);
   font-size: 12px;
   padding-left: 4px;
+  display: none;
 }
 
 .dsc-select:invalid {
@@ -333,10 +339,12 @@ nav a {
   .dsc-tb576 {
     display: table-cell;
   }
+
   .dsc-table th:nth-child(1) {
     padding-left: 20px;
     border-top-left-radius: 10px;
   }
+
   .dsc-table th:nth-child(2) {
     border-top-left-radius: 0;
   }
@@ -344,6 +352,7 @@ nav a {
   .dsc-table td:nth-child(1) {
     padding-left: 20px;
   }
+
   .dsc-table td:nth-child(2) {
     padding-left: 0;
   }
@@ -387,19 +396,19 @@ nav a {
   transform: translate(-50%, -50%);
 }
 
-.dsc-dialog-box h2{
+.dsc-dialog-box h2 {
   font-size: 20px;
   color: var(--dsc-color-font-primary);
   margin-bottom: 20px;
 }
 
-.dsc-dialog-btn-container{
+.dsc-dialog-btn-container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
 
-.dsc-dialog-btn{
+.dsc-dialog-btn {
   width: 100%;
 }
