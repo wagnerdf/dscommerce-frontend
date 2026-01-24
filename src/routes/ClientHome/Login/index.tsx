@@ -31,6 +31,12 @@ export default function Login() {
       name: "password",
       type: "password",
       placeholder: "Senha",
+      /* 
+      validation: function (value: string) {
+        return /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%?=*&]).{8,20})/.test(value);
+      },
+      message: "A senha deve conter caracteres especiais, numeros, letras maiuscula e minuscula"
+      */
     },
   });
 
@@ -71,7 +77,7 @@ export default function Login() {
                   onTurnDirty={handleTurnDirty}
                   onChange={handleInputChange}
                 />
-                <div className="dsc-form-error"></div>
+                <div className="dsc-form-error">{formData.username.message}</div>
               </div>
               <div>
                 <FormInput
@@ -80,6 +86,7 @@ export default function Login() {
                   onTurnDirty={handleTurnDirty}
                   onChange={handleInputChange}
                 />
+                 <div className="dsc-form-error">{formData.password.message}</div>
               </div>
             </div>
 
