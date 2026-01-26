@@ -7,10 +7,19 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node
 node_modules
 dist
 dist-ssr
 *.local
+
+# Yarn Berry / PnP (arquivos dependentes do SO)
+.pnp.*
+.yarn/install-state.gz
+.yarn/build-state.yml
+.yarn/cache
+.yarn/unplugged
+.yarn/sdks
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +31,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
